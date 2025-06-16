@@ -1,15 +1,17 @@
 let button = document.querySelector("button");
+let result = document.querySelector(".result");
 
 
 button.addEventListener("click", function() {
-    let waterTemp = document.querySelector("input").value;
+    let waterTemp = Number(document.querySelector("input").value);
     if (waterTemp >= 212) {
-   document.querySelector("p").innerHTML="Boiling!";
+        result.innerHTML="Boiling!"
+    } else if (waterTemp > 32 || waterTemp < 212) {
+        result.innerHTML=""
     }
     // 1. Add an else-if and else so that:
     //  - If the water temp is greater than 32°, the user knows it's ok to drink.
     //  - If the water temp is 32° or less, the user knows the water is frozen.
-    
     
     
 });

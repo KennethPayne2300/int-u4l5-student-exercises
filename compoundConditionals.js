@@ -2,8 +2,8 @@
 
 // 1. Create a secret username and password.
 //  - The variables are declared already. Update the values.
-let secretUsername = ("");
-let secretPassword = ("");
+let secretUsername = ("NinjagoFan2300");
+let secretPassword = ("Ninjagopass");
 let button = document.querySelector("button");
 
 button.addEventListener("click", function() {
@@ -13,7 +13,17 @@ button.addEventListener("click", function() {
 
     // 2. Create a compound conditional statement to check for the following:
     //  - If the username AND password is correct, update the text of the message div to say "Success!"
-    
+    if (username === secretUsername && password === secretPassword) {
+        message.innerHTML = "success";
+    } else if (username === "" || password === "") {
+        message.innerHTML = "you need to put something";
+    } else if (username === secretUsername && password !== secretPassword) {
+        message.innerHTML = "sorry wrong password";
+    } else if (username !== secretUsername && password === secretPassword) {
+        message.innerHTML = "sorry wrong username";
+    } else if (username !== secretUsername && password !== secretPassword)  {
+        message.innerHTML = "neither are correct who are you?";
+    }
     // CODE SOLO
     // 3. Create additional compound conditionals that check for the following:
     //  - If the username is correct AND the password is incorrect, update the text of the message div to say "Wrong password - be careful, don't mess this up too many times."
